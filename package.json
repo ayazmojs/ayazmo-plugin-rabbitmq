@@ -1,6 +1,6 @@
 {
   "name": "ayazmo-plugin-rabbitmq",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ayazmo plugin rabbitmq",
   "exports": "./dist/index.js",
   "author": "ayazmo.io",
