@@ -1,6 +1,6 @@
 {
   "name": "ayazmo-plugin-rabbitmq",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ayazmo plugin rabbitmq",
   "exports": "./dist/index.js",
   "author": "ayazmo.io",
@@ -15,26 +15,33 @@
     "dist"
   ],
   "dependencies": {
-    "@ayazmo/core": "^0.2.7",
-    "@ayazmo/types": "^0.2.7",
-    "@ayazmo/utils": "^0.2.7",
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.7",
     "amqplib": "^0.10.4",
     "rascal": "^20.1.0"
   },
   "scripts": {
     "build": "rimraf dist && tsc --build",
     "watch": "tsc --watch",
-    "version": "changeset version",
-    "publish": "changeset publish",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "devDependencies": {
+    "@ayazmo/core": "^0.3.0",
+    "@ayazmo/types": "^0.3.0",
+    "@ayazmo/utils": "^0.3.0",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.9",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.2"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "@ayazmo/core": "^0.3.0",
+    "@ayazmo/types": "^0.3.0",
+    "@ayazmo/utils": "^0.3.0",
+    "ayazmo": "^0.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
