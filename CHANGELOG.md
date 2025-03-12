@@ -1,5 +1,11 @@
 # ayazmo-plugin-rabbitmq
 
+## 0.1.4
+
+### Patch Changes
+
+- bump deps & testwq
+
 ## 0.1.3
 
 ### Patch Changes

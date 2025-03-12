@@ -172,7 +172,7 @@ describe('RmqService', () => {
       await rmqService.publishMessage('test.route', message);
 
       expect(mockBrokerInstance.publish).toHaveBeenCalledTimes(1);
-      expect(mockBrokerInstance.publish).toHaveBeenCalledWith('test.route', JSON.stringify(message));
+      expect(mockBrokerInstance.publish).toHaveBeenCalledWith('test.route', message);
     });
 
     it('should handle publish errors', async () => {
@@ -185,7 +185,7 @@ describe('RmqService', () => {
     });
   });
 
-  describe('event transformation', () => {
+  describe('event payload transformation', () => {
     beforeEach(async () => {
       rmqService = new RmqService(mockApp, pluginSettings);
       // Wait for init to complete
@@ -201,7 +201,7 @@ describe('RmqService', () => {
       expect(sampleTransformers['test.event'].transformer).toHaveBeenCalled();
       expect(mockBrokerInstance.publish).toHaveBeenCalled();
       const publishCall = mockBrokerInstance.publish.mock.calls[0];
-      const publishedData = JSON.parse(publishCall[1]);
+      const publishedData = publishCall[1];
       expect(publishedData.transformed).toBe(true);
     });
 
